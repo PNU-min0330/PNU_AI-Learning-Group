@@ -671,15 +671,9 @@
                     💡 <strong>팀장은 반드시 SW전공</strong>(정보컴퓨터공학부 또는 의생명융합공학부 데이터사이언스 전공) 학생이어야 합니다.
                 </div>
 
-                <div class="field-row">
-                    <div class="field">
-                        <label class="field-label">성명<span class="required">*</span></label>
-                        <input type="text" name="leaderName" placeholder="홍길동" required>
-                    </div>
-                    <div class="field">
-                        <label class="field-label">생년월일<span class="required">*</span></label>
-                        <input type="date" name="leaderBirth" required>
-                    </div>
+                <div class="field">
+                    <label class="field-label">성명<span class="required">*</span></label>
+                    <input type="text" name="leaderName" placeholder="홍길동" required>
                 </div>
 
                 <div class="field-row">
@@ -803,7 +797,7 @@
                 <div class="consent-box">
                     <h4>// 개인정보 수집 및 이용</h4>
                     <p><strong>수집 목적:</strong> 신청자 식별, 팀 구성 및 장학금 지급, 활동 관련 통계자료</p>
-                    <p><strong>수집 항목:</strong> 성명, 생년월일, 연락처, 이메일, 학과(부), 전공, 학년</p>
+                    <p><strong>수집 항목:</strong> 성명, 연락처, 이메일, 학과(부), 전공, 학년</p>
                     <p><strong>보유 기간:</strong> SW중심대학 사업 종료 후 1년</p>
                     <div class="checkbox-row">
                         <input type="checkbox" id="consent1" name="consent1" required>
@@ -815,7 +809,7 @@
                     <h4>// 개인정보 제3자 제공</h4>
                     <p><strong>제공받는 자:</strong> SW중심대학 전담기관, 부산대학교 산학협력단, 대회 주최/주관기관</p>
                     <p><strong>제공 목적:</strong> 심사 및 참가자 통계자료 제공, 상금지급</p>
-                    <p><strong>제공 항목:</strong> 성명, 생년월일, 연락처, 이메일, 학과(부), 전공, 학년, 출품작</p>
+                    <p><strong>제공 항목:</strong> 성명, 연락처, 이메일, 학과(부), 전공, 학년, 출품작</p>
                     <div class="checkbox-row">
                         <input type="checkbox" id="consent2" name="consent2" required>
                         <label for="consent2">위 내용에 동의합니다 (필수)</label>
@@ -866,7 +860,7 @@
         // ⚠️ 중요: 아래 URL을 본인의 Apps Script URL로 교체하세요!
         // 배포 가이드의 7단계에서 받은 URL을 여기에 붙여넣으면 됩니다.
         // ============================================
-        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxv4HpNyYfQBflOZN5eZFyAxiSpUUpoKN_iL2sEV2B5w3gCv2KqAYRtQltuM5Dcjw4c/exec';
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-xt2SiG-sImNr3U9fqKz6Qc8ndzjSJfXxH_VsboMoX6CadPaNU21oAxy4bm0qw4Xw/exec';
 
         let currentStep = 1;
         const totalSteps = 5;
@@ -1169,7 +1163,7 @@
             // 모든 단계의 모든 필수 항목 검사 (빈칸이 있으면 해당 단계로 자동 이동)
             if (!validateAllSteps()) return;
 
-            if (APPS_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbxv4HpNyYfQBflOZN5eZFyAxiSpUUpoKN_iL2sEV2B5w3gCv2KqAYRtQltuM5Dcjw4c/exec') {
+            if (APPS_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbz-xt2SiG-sImNr3U9fqKz6Qc8ndzjSJfXxH_VsboMoX6CadPaNU21oAxy4bm0qw4Xw/exec') {
                 alert('⚠️ 관리자에게 알려주세요: Apps Script URL이 아직 설정되지 않았습니다.');
                 return;
             }
