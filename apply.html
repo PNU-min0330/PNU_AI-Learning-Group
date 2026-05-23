@@ -1163,10 +1163,10 @@
             // 모든 단계의 모든 필수 항목 검사 (빈칸이 있으면 해당 단계로 자동 이동)
             if (!validateAllSteps()) return;
 
-            if (APPS_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbx3e7ZC3fZzUTJPPxJFcVTkhAcP3jw7XS3YOin_NDeMq5pVNvX9x6PYEc296xRHJNTsLQ/exec') {
-                alert('⚠️ 관리자에게 알려주세요: Apps Script URL이 아직 설정되지 않았습니다.');
-                return;
-            }
+          if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
+       alert('⚠️ 관리자에게 알려주세요: Apps Script URL이 아직 설정되지 않았습니다.');
+       return;
+   }
 
             // UI 전환
             document.getElementById('applicationForm').style.display = 'none';
