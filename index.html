@@ -641,6 +641,11 @@
             transition: all 0.3s;
             position: relative;
             padding-left: 3rem;
+            padding-right: 2.5rem;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            cursor: pointer;
         }
 
         .contest-tag::before {
@@ -653,19 +658,68 @@
             font-weight: 700;
         }
 
+        .contest-tag::after {
+            content: '↗';
+            position: absolute;
+            right: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
         .contest-tag:hover {
             border-color: var(--border-bright);
+            background: var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .contest-tag:hover::after {
+            color: var(--accent);
+            transform: translateY(-50%) translateX(3px);
         }
 
         .contest-tag h4 {
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 0.35rem;
+            color: var(--text-primary);
         }
 
         .contest-tag p {
             font-size: 0.95rem;
             color: var(--text-muted);
+        }
+
+        /* 미정 카드 (링크 없음) */
+        .contest-tag-tbd {
+            cursor: not-allowed;
+            opacity: 0.75;
+        }
+
+        .contest-tag-tbd::after {
+            content: '미정';
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            padding: 0.25rem 0.6rem;
+            border-radius: 100px;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .contest-tag-tbd:hover {
+            border-color: var(--border);
+            background: var(--bg-card);
+            transform: none;
+        }
+
+        .contest-tag-tbd:hover::after {
+            color: var(--text-muted);
+            transform: translateY(-50%);
         }
 
         /* ===== CTA 섹션 ===== */
@@ -1020,30 +1074,30 @@
             <div style="margin-top: 4rem;">
                 <h3 style="font-family: 'JetBrains Mono', monospace; font-size: 1rem; color: var(--accent); margin-bottom: 1.5rem; letter-spacing: 0.1em;">// 추천 경진대회</h3>
                 <div class="contests">
-                    <div class="contest-tag">
-                        <h4>부산SW융합해커톤</h4>
-                        <p>제11회 · 해커톤</p>
-                    </div>
-                    <div class="contest-tag">
+                    <a href="https://kbig.kr/portal/kbig/camp/CompetitionApplication.page" target="_blank" rel="noopener" class="contest-tag">
                         <h4>데이터크리에이터캠프</h4>
                         <p>K-DATA · 데이터분석</p>
-                    </div>
-                    <div class="contest-tag">
+                    </a>
+                    <a href="https://dacon.io/" target="_blank" rel="noopener" class="contest-tag">
+                        <h4>데이콘 해커톤</h4>
+                        <p>DACON · 해커톤</p>
+                    </a>
+                    <a href="https://www.2026datacontest.co.kr/" target="_blank" rel="noopener" class="contest-tag">
                         <h4>고용노동 공공데이터 활용</h4>
-                        <p>제4회 · 공모전</p>
-                    </div>
-                    <div class="contest-tag">
+                        <p>제5회 · 공모전</p>
+                    </a>
+                    <a href="https://www.ycdatacon.kr/" target="_blank" rel="noopener" class="contest-tag">
                         <h4>영천시 공공데이터 활용</h4>
-                        <p>제4회 · 경진대회</p>
+                        <p>제5회 · 경진대회</p>
+                    </a>
+                    <div class="contest-tag contest-tag-tbd">
+                        <h4>부산AI·SW융합해커톤</h4>
+                        <p>제11회 · 해커톤</p>
                     </div>
-                    <div class="contest-tag">
-                        <h4>서울열린데이터광장</h4>
-                        <p>공공데이터 활용 창업</p>
-                    </div>
-                    <div class="contest-tag">
-                        <h4>식의약 데이터 분석</h4>
-                        <p>식약처 · 데이터활용</p>
-                    </div>
+                    <a href="https://swhackathon.kr/ko/" target="_blank" rel="noopener" class="contest-tag">
+                        <h4>대한민국SW융합해커톤</h4>
+                        <p>제13회 · 해커톤</p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1055,7 +1109,7 @@
             <div class="section-label">// 04 REQUIREMENTS</div>
             <h2 class="section-title">신청 자격 및 방법</h2>
             <p class="section-desc">
-                아래 자격 요건을 확인하시고, 구글폼을 통해 신청해주세요.
+                아래 자격 요건을 확인하시고, 신청서 작성하기 통해 신청해주세요.
             </p>
 
             <div class="requirements">
