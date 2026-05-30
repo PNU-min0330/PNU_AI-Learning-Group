@@ -1,11 +1,9 @@
 # PNU_AI-Learning-Group
 # 🎓 2026 PNU AI학습공동체 신청 시스템
 
-> 부산대학교 정보의생명공학대학 AI학습공동체 모집을 위한 웹 기반 신청 시스템
+> 부산대학교 정보의생명공학대학 AI학습공동체 모집을 위한 웹 기반 신청 
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-배포중-00ff88?style=flat-square)](https://pnuswkmh.github.io/PNU_AI-Learning-Group/)
-[![Status](https://img.shields.io/badge/Status-운영중-success?style=flat-square)]()
-[![License](https://img.shields.io/badge/License-PNU-blue?style=flat-square)]()
+신청사이트 https://pnu-min0330.github.io/PNU_AI-Learning-Group/
 
 -----
 
