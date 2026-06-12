@@ -848,7 +848,7 @@
             <h2 class="success-title">신청 완료!</h2>
             <p class="success-desc">
                 <strong style="color: var(--accent);" id="successTeamName">팀</strong> 의 신청이 성공적으로 접수되었습니다.<br>
-                선정 결과는 <strong style="color: var(--accent);">2026년 6월 10일(수)</strong>에 발표됩니다.<br>
+                선정 결과는 <strong style="color: var(--accent);">2026년 6월 29일(월)</strong>에 발표됩니다.<br>
                 작성하신 이메일로 결과를 안내드릴 예정이에요.
             </p>
             <a href="index.html" class="btn btn-primary" style="display: inline-flex;">메인으로 돌아가기</a>
@@ -1163,10 +1163,10 @@
             // 모든 단계의 모든 필수 항목 검사 (빈칸이 있으면 해당 단계로 자동 이동)
             if (!validateAllSteps()) return;
 
-          if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
-       alert('⚠️ 관리자에게 알려주세요: Apps Script URL이 아직 설정되지 않았습니다.');
-       return;
-   }
+            if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
+                alert('⚠️ 관리자에게 알려주세요: Apps Script URL이 아직 설정되지 않았습니다.');
+                return;
+            }
 
             // UI 전환
             document.getElementById('applicationForm').style.display = 'none';
