@@ -2,9 +2,6 @@
 
 > 부산대학교 정보의생명공학대학 SW전공 학생들을 위한 자율 학습·프로젝트 지원 프로그램
 
-[![신청하기](https://img.shields.io/badge/신청하기-바로가기-00ff88?style=for-the-badge)](https://pnuswkmh.github.io/PNU_AI-Learning-Group/apply.html)
-[![접수마감](https://img.shields.io/badge/접수마감-2026.06.29(월)-ff6b6b?style=for-the-badge)]()
-
 ---
 
 ## 📌 프로그램 소개
