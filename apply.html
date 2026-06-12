@@ -296,6 +296,75 @@
             font-weight: 600;
         }
 
+        /* 과제 유형 라디오 카드 (세로 정렬, 더 큼) */
+        .topic-radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .topic-radio-option input[type="radio"] {
+            display: none;
+        }
+
+        .topic-radio-option label {
+            display: block;
+            padding: 1.1rem 1.25rem;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .topic-radio-option label::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 1.25rem;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .topic-radio-option input[type="radio"]:checked + label {
+            background: var(--accent-glow);
+            border-color: var(--accent);
+        }
+
+        .topic-radio-option input[type="radio"]:checked + label::before {
+            border-color: var(--accent);
+            background: var(--accent);
+            box-shadow: inset 0 0 0 4px var(--bg-darker);
+        }
+
+        .topic-radio-option label:hover {
+            border-color: var(--border-bright);
+        }
+
+        .topic-radio-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            padding-right: 2rem;
+        }
+
+        .topic-radio-option input[type="radio"]:checked + label .topic-radio-title {
+            color: var(--accent);
+        }
+
+        .topic-radio-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding-right: 2rem;
+            line-height: 1.5;
+        }
+
         /* 팀원 카드 */
         .member-card {
             background: var(--bg-card);
@@ -644,6 +713,29 @@
                 <div class="field">
                     <label class="field-label">팀명<span class="required">*</span></label>
                     <input type="text" name="teamName" placeholder="예: AI어벤져스" required>
+                </div>
+
+                <div class="field">
+                    <label class="field-label">지정과제 선택<span class="required">*</span></label>
+                    <div class="info-box" style="margin-bottom: 1rem;">
+                        💡 아래 2가지 지정과제 중 <strong>하나를 선택</strong>해주세요.
+                    </div>
+                    <div class="topic-radio-group">
+                        <div class="topic-radio-option">
+                            <input type="radio" id="topic-1" name="projectTopic" value="지정과제①_AI학사업무자동화" required>
+                            <label for="topic-1">
+                                <div class="topic-radio-title">지정과제 ① AI 학사업무 자동화</div>
+                                <div class="topic-radio-desc">AI 기술을 활용한 학사 업무 자동화 시스템 개발</div>
+                            </label>
+                        </div>
+                        <div class="topic-radio-option">
+                            <input type="radio" id="topic-2" name="projectTopic" value="지정과제②_데이터크리에이터캠프">
+                            <label for="topic-2">
+                                <div class="topic-radio-title">지정과제 ② 데이터크리에이터캠프</div>
+                                <div class="topic-radio-desc">K-DATA 주관 데이터 분석 경진대회 참가 프로젝트</div>
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="field">
