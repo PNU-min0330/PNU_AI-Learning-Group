@@ -722,6 +722,160 @@
             transform: translateY(-50%);
         }
 
+        /* ===== 지정과제 섹션 ===== */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .topic-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+        }
+
+        .topic-card:hover {
+            border-color: var(--border-bright);
+            transform: translateY(-4px);
+        }
+
+        .topic-badge {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--bg-darker);
+            background: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 100px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .topic-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .topic-card .topic-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .topic-card h4 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        /* 토글 (details/summary) */
+        .topic-toggle {
+            margin-top: 1.25rem;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .topic-toggle summary {
+            padding: 0.85rem 1.1rem;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            list-style: none;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .topic-toggle summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .topic-toggle summary:hover {
+            background: var(--accent-glow);
+        }
+
+        .topic-toggle[open] {
+            border-color: var(--border-bright);
+        }
+
+        .topic-toggle[open] summary {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-toggle-content {
+            padding: 1rem 1.1rem;
+        }
+
+        .topic-example {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            padding: 0.6rem 0.85rem;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+        }
+
+        .topic-example-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .topic-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--accent);
+            color: var(--bg-darker);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .topic-link:hover {
+            background: var(--accent-dim);
+            transform: translateY(-2px);
+        }
+
         /* ===== CTA 섹션 ===== */
         .cta-section {
             background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
@@ -893,6 +1047,7 @@
             <li><a href="#about">프로그램 소개</a></li>
             <li><a href="#schedule">운영 일정</a></li>
             <li><a href="#benefits">지원 내용</a></li>
+            <li><a href="#topics">지정과제</a></li>
             <li><a href="#requirements">신청 자격</a></li>
             <li><a href="#contact">문의</a></li>
         </ul>
@@ -998,7 +1153,7 @@
                     <div class="timeline-content">
                         <h4>모집 및 선정</h4>
                         <ul>
-                            <li><span>모집 공고 및 접수</span><span class="date">~06.27(금) 12:00</span></li>
+                            <li><span>모집 공고 및 접수</span><span class="date">~06.29(월)</span></li>
                             <li><span>선정결과 공고</span><span class="date">06.29(월)</span></li>
                             <li><span>오리엔테이션</span><span class="date">06.30(화)</span></li>
                         </ul>
@@ -1010,10 +1165,10 @@
                     <div class="timeline-content">
                         <h4>프로젝트 진행</h4>
                         <ul>
-                            <li><span>활동 시작</span><span class="date">07.01(수)</span></li>
-                            <li><span>중간 보고서 제출 및 평가</span><span class="date">7월 말 예정</span></li>
-                            <li><span>산업체 전문가 멘토링</span><span class="date">중간평가 후</span></li>
-                            <li><span>최종 보고서 제출</span><span class="date">~08.31(월)</span></li>
+                            <li><span>중간 보고서 제출 (중간결과물 포함)</span><span class="date">~07.24(금)</span></li>
+                            <li><span>중간평가 및 장학금 지급 (1차)</span><span class="date">~07.31(금)</span></li>
+                            <li><span>산업체 전문가 자문</span><span class="date">~08.07(금)</span></li>
+                            <li><span>최종 보고서 제출 (최종결과물 포함)</span><span class="date">~08.31(월)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -1024,8 +1179,7 @@
                         <h4>평가 및 장학금 지급</h4>
                         <ul>
                             <li><span>만족도 조사</span><span class="date">~08.31(월)</span></li>
-                            <li><span>최종평가 및 장학금 지급</span><span class="date">9월 중</span></li>
-                            <li><span>우수팀 시상</span><span class="date">9월 중</span></li>
+                            <li><span>최종평가 및 장학금 지급 (2차)</span><span class="date">~09.11(금)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -1100,13 +1254,66 @@
         </div>
     </section>
 
+    <!-- 지정과제 -->
+    <section id="topics" class="scroll-reveal">
+        <div class="container">
+            <div class="section-label">// 04 TOPICS</div>
+            <h2 class="section-title">지정과제</h2>
+            <p class="section-desc">
+                아래 2가지 지정과제 중 하나를 선택하여 프로젝트를 진행합니다.
+            </p>
+
+            <div class="topics-grid">
+                <!-- 지정과제 1 -->
+                <div class="topic-card">
+                    <span class="topic-badge">지정과제 ①</span>
+                    <h3>AI 학사업무 자동화</h3>
+                    <p class="topic-desc">
+                        AI 기술을 활용하여 학과·대학의 학사 업무를 자동화하는 시스템 개발
+                    </p>
+
+                    <details class="topic-toggle">
+                        <summary>예시 보기 ▾</summary>
+                        <div class="topic-toggle-content">
+                            <p class="topic-example">ex) 서버관리시스템, 프로젝트관리시스템 등</p>
+                            <p class="topic-example-desc">
+                                서버 운영·관리의 효율성 향상을 위한 통합 시스템, 학과 행사 및 졸업과제 등 업무 효율화를 위한 시스템 등 다양한 형태로 자유롭게 구현 가능합니다.
+                            </p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- 지정과제 2 -->
+                <div class="topic-card">
+                    <span class="topic-badge">지정과제 ②</span>
+                    <h3>데이터크리에이터캠프</h3>
+                    <p class="topic-desc">
+                        K-DATA 주관 데이터크리에이터캠프 참가를 목표로 한 데이터 분석 프로젝트 진행
+                    </p>
+
+                    <details class="topic-toggle">
+                        <summary>대회 정보 ▾</summary>
+                        <div class="topic-toggle-content">
+                            <p class="topic-example-desc">
+                                한국데이터산업진흥원(K-DATA) 주관의 데이터 분석 경진대회로, 공공 및 민간 데이터를 활용한 창의적 분석 결과물을 도출하는 프로젝트입니다.
+                            </p>
+                            <a href="https://kbig.kr/portal/kbig/camp/CompetitionApplication.page" target="_blank" rel="noopener" class="topic-link">
+                                공식 사이트 바로가기 ↗
+                            </a>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 신청 자격 -->
     <section id="requirements" class="scroll-reveal">
         <div class="container">
-            <div class="section-label">// 04 REQUIREMENTS</div>
+            <div class="section-label">// 05 REQUIREMENTS</div>
             <h2 class="section-title">신청 자격 및 방법</h2>
             <p class="section-desc">
-                아래 자격 요건을 확인하시고, 구글폼을 통해 신청해주세요.
+                아래 자격 요건을 확인하시고, 신청 페이지에서 신청서를 작성해주세요.
             </p>
 
             <div class="requirements">
@@ -1167,7 +1374,7 @@
     <!-- 문의 -->
     <section id="contact" class="scroll-reveal">
         <div class="container">
-            <div class="section-label">// 05 CONTACT</div>
+            <div class="section-label">// 06 CONTACT</div>
             <h2 class="section-title">문의처</h2>
             <p class="section-desc">
                 궁금한 점이 있으시면 아래 담당자에게 문의해주세요.
